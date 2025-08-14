@@ -1,6 +1,6 @@
 # Bouncing Ball Physics Simulation / Физическая симуляция падающего шарика
 
-![Simulation Demo](demo.GIF)
+<img src="demo.GIF" alt="Simulation Demo" width="500"/>
 
 ---
 
