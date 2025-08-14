@@ -1,0 +1,33 @@
+name: Windows MSVC (CMake)
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up vcpkg
+        uses: lukka/run-vcpkg@v11
+        with:
+          setupOnly: true
+          vcpkgGitCommitId: master  # or pin a commit for reproducibility
+
+      - name: Configure (CMake + vcpkg toolchain)
+        run: >
+          cmake -S . -B build -G Ninja
+          -DCMAKE_BUILD_TYPE=Release
+          -DCMAKE_TOOLCHAIN_FILE=${{ env.VCPKG_ROOT }}/scripts/buildsystems/vcpkg.cmake
+          -DVCPKG_TARGET_TRIPLET=x64-windows
+
+      - name: Build
+        run: cmake --build build --config Release
+
+      - name: Upload exe
+        uses: actions/upload-artifact@v4
+        with:
+          name: ball-windows
+          path: build/*.exe
