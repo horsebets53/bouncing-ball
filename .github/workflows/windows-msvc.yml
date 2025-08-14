@@ -1,3 +1,4 @@
+# .github/workflows/windows-msvc.yml
 name: Windows MSVC (CMake)
 
 on:
@@ -11,10 +12,15 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up vcpkg
+        id: vcpkg
         uses: lukka/run-vcpkg@v11
         with:
-          setupOnly: true
-          vcpkgGitCommitId: master  # or pin a commit for reproducibility
+          # Force cloning vcpkg instead of expecting a ./vcpkg submodule
+          vcpkgDirectory: ${{ runner.temp }}/vcpkg
+          vcpkgGitURL: https://github.com/microsoft/vcpkg.git
+          # IMPORTANT: put a real 40-char commit SHA here (not "master")
+          vcpkgGitCommitId: 0000000000000000000000000000000000000000
+          runVcpkgInstall: true   # runs 'vcpkg install' if vcpkg.json exists
 
       - name: Configure (CMake + vcpkg toolchain)
         run: >
