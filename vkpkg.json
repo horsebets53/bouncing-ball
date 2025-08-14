@@ -1,0 +1,8 @@
+{
+  "name": "bouncing-ball",
+  "version-string": "0.1.0",
+  "dependencies": [
+    { "name": "sfml" }
+  ],
+  "builtin-baseline": "PUT_THE_SAME_40_CHAR_VCPKG_COMMIT_SHA_HERE"
+}
