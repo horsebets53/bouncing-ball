@@ -98,6 +98,10 @@ inline sf::Color HSVtoRGB(float h, float s, float v, std::uint8_t a = 255) {
             case 5: r=v; g=p; b=q; break;
         }
     }
+    r = std::clamp(r, 0.f, 1.f);
+    g = std::clamp(g, 0.f, 1.f);
+    b = std::clamp(b, 0.f, 1.f);
+
     auto to8 = [](float x){ return static_cast<std::uint8_t>(std::lround(255.f * x)); };
     return sf::Color(to8(r), to8(g), to8(b), a);
 }
