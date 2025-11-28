@@ -16,7 +16,7 @@ All simulation parameters are easily configurable via constants in the code, all
 
 ---
 
-### ✨ Ключевые возможности / Features
+###  Ключевые возможности / Features
 
 *   **Физическая симуляция / Physics Simulation**: Гравитация и упругое отражение от стенок контейнера.
 *   **Динамический рост / Dynamic Growth**: Опциональная возможность увеличения радиуса шарика при каждом ударе (`GROW_ON_HIT`).
@@ -26,7 +26,7 @@ All simulation parameters are easily configurable via constants in the code, all
 
 ---
 
-### ⚙️ Настройка
+### Настройка
 
 Все параметры симуляции находятся в верхней части файла `src/main.cpp`. Вы можете легко изменить их и пересобрать проект, чтобы увидеть результат.
 
@@ -53,7 +53,7 @@ constexpr float HUE_SPEED    = 30.f;  // [RU] радуга медленнее
 // ...
 ```
 
-### ⚙️ Configuration
+###  Configuration
 
 All simulation parameters are located at the top of the `src/main.cpp` file. You can easily modify them and rebuild the project to see the result.
 
@@ -77,7 +77,7 @@ constexpr float HUE_SPEED    = 30.f;  // slower rainbow
 
 ---
 
-### 🚀 Сборка и запуск / Build & Run
+###  Сборка и запуск / Build & Run
 
 #### Зависимости / Dependencies
 *   C++17 compiler (MSVC, GCC, Clang)
@@ -114,7 +114,7 @@ constexpr float HUE_SPEED    = 30.f;  // slower rainbow
     *   На Linux/macOS: `build/ball`
 
 
-### 🚀 Build & Run
+###  Build & Run
 
 #### Dependencies
 *   A C++17 compliant compiler (MSVC, GCC, Clang)
@@ -153,7 +153,7 @@ constexpr float HUE_SPEED    = 30.f;  // slower rainbow
 
 ---
 
-### 📄 Лицензия / License
+###  Лицензия / License
 
 Этот проект распространяется под лицензией MIT. Подробности смотрите в файле `LICENSE.md`.
 
